@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beginning-oop-with-csharp", "beginning-oop-with-csharp\beginning-oop-with-csharp.csproj", "{72CFFA4E-884E-432D-B853-DC53FDD3EB3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendars", "Calendars\Calendars.csproj", "{3D4936D4-4DCD-412E-B62F-F4EDAFDACCD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{72CFFA4E-884E-432D-B853-DC53FDD3EB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72CFFA4E-884E-432D-B853-DC53FDD3EB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72CFFA4E-884E-432D-B853-DC53FDD3EB3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D4936D4-4DCD-412E-B62F-F4EDAFDACCD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4936D4-4DCD-412E-B62F-F4EDAFDACCD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D4936D4-4DCD-412E-B62F-F4EDAFDACCD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D4936D4-4DCD-412E-B62F-F4EDAFDACCD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
