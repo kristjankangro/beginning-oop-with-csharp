@@ -23,9 +23,11 @@ public class Date
 
     public override string ToString() => _year + "/" + _day;
 
-    public Date GetFirstOccurence(YearDate day) => GetFirstOccurence(day.IsBefore(_day) ? _year + 1 : _year, day);
+    public Date GetFirstOccurence(YearDate day) => GetFirstDayOccurence(day.IsBefore(_day) ? _year + 1 : _year, day);
     
-    private Date GetFirstOccurence(int year, YearDate day) => new Date(day.IsLeap() ? GetLeap(year) : year, day);
+    private Date GetFirstDayOccurence(int year, YearDate day) => new Date(day.IsLeap() ? GetLeap(year) : year, day);
 
     private int GetLeap(int year) => IsLeap(year) ? year : GetLeap(year + 1);
+
+    public Date GetFirstDayOccurence(Date day) => GetFirstDayOccurence(_year, day._day);
 }

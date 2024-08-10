@@ -14,4 +14,10 @@ public class Child
     public override string ToString() => _name + " born on " + _birthDate;
 
     public Date GetDateByAge(int age) => _birthDate.AddYears(age);
+
+    public Date GetFirstSchoolBday(SchoolSystem schoolSystem)
+    {
+        return schoolSystem.GetBeginning(this).GetFirstDayOccurence(_birthDate);
+
+    }
 }
