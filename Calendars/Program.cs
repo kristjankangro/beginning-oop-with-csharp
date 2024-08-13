@@ -5,9 +5,9 @@ using Calendars;
 Console.WriteLine("Hello, World!");
 var cal = new GregorianCalendar();
 
-var bDay = new Date(2016, new YearDate(month: 2, day: 29, cal),cal);
+var bDay = new Date(cal,2016, new YearDate(month: 2, day: 29, cal));
 var child = new Child("Tim", bDay);
-var child2 = new Child("Jake", new Date(2015, new YearDate(8, 27, cal), cal));
+var child2 = new Child("Jake", new Date(cal,2015, new YearDate(8, 27, cal)));
 
 var schoolSystem = new SchoolSystem(
     dateCutoff: new YearDate(3, 1, cal),
