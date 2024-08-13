@@ -3,15 +3,16 @@
 using Calendars;
 
 Console.WriteLine("Hello, World!");
+var cal = new GregorianCalendar();
 
-var bDay = new Date(2016, new YearDate(month: 2, day: 29));
+var bDay = new Date(2016, new YearDate(month: 2, day: 29, cal),cal);
 var child = new Child("Tim", bDay);
-var child2 = new Child("Jake", new Date(2015, new YearDate(8, 27)));
+var child2 = new Child("Jake", new Date(2015, new YearDate(8, 27, cal), cal));
 
 var schoolSystem = new SchoolSystem(
-    dateCutoff: new YearDate(3, 1),
+    dateCutoff: new YearDate(3, 1, cal),
     minAge: 5,
-    schoolStart: new YearDate(8, 15)
+    schoolStart: new YearDate(8, 15, cal)
 );
 
 Report(child, schoolSystem);
