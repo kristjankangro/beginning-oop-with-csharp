@@ -22,8 +22,7 @@ public class YearDate : IEquatable<YearDate>
         IsEndOfMonth() ? new YearDate(_calendar.NextMonth(_month), 1, _calendar) : new YearDate(_month, _day + 1, _calendar);
 
     private bool IsEndOfMonth() => _calendar.DaysInMonth(_month) == _day;
-
-   
+  
 
     public bool IsBefore(YearDate day) => _month < day._month ||
                                           (_month == day._month && _day < day._day);
