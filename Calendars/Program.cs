@@ -3,25 +3,30 @@
 using Calendars;
 
 Console.WriteLine("Hello, World!");
-var cal = new GregorianCalendar();
-
-var bDay = new Date(cal,2016, new YearDate(month: 2, day: 29, cal));
-var child = new Child("Tim", bDay);
-var child2 = new Child("Jake", new Date(cal,2015, new YearDate(8, 27, cal)));
-
-var schoolSystem = new SchoolSystem(
-    dateCutoff: new YearDate(3, 1, cal),
-    minAge: 5,
-    schoolStart: new YearDate(8, 15, cal)
-);
-
-Report(child, schoolSystem);
-Report(child2, schoolSystem);
+Demonstrate(new JulianCalendar());
+Demonstrate(new GregorianCalendar());
 
 return;
 
-static void Report(Child child, SchoolSystem schoolSystem)
+void Demonstrate(Calendar cal)
 {
-    Console.WriteLine(child + " starts school on " + schoolSystem.GetBeginning(child) +
-                      ", celebrates bday at " + child.GetFirstSchoolBday(schoolSystem));
+	{
+		var child = new Child("Tim", cal.Create(1892, 2, 29));
+		var child2 = new Child("Jake", cal.Create(1891, 8, 27));
+
+		var schoolSystem = new SchoolSystem(
+			dateCutoff: cal.Create(3, 1),
+			minAge: 5,
+			schoolStart: cal.Create(8, 15)
+		);
+		Console.WriteLine("Using " + cal );
+		Report(child, schoolSystem);
+		Report(child2, schoolSystem);
+	}
+
+	static void Report(Child child, SchoolSystem schoolSystem)
+	{
+		Console.WriteLine(child + " starts school on " + schoolSystem.GetBeginning(child) +
+		                  ", celebrates bday at " + child.GetFirstSchoolBday(schoolSystem));
+	}
 }

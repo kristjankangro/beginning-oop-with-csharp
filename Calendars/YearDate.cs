@@ -1,25 +1,27 @@
 namespace Calendars;
 
-public class YearDate : IEquatable<YearDate>
+public class YearDate
 {
     private int _month;
     private int _day;
-    private readonly GregorianCalendar _calendar;
+    private readonly Calendar _calendar;
 
-    public YearDate(int month, int day, GregorianCalendar calendar)
+    public YearDate(Calendar calendar, int month, int day)
     {
         _month = month;
         _day = day;
         _calendar = calendar;
     }
 
-    public bool Equals(YearDate? other) => this._month == other?._month && this._day == other._day;
+    public bool IsLeap() => _calendar.IsLeapDay(_month, _day);
 
     public override string ToString() => _month + "/" + _day;
 
    
     public YearDate GetNext() =>
-        IsEndOfMonth() ? new YearDate(_calendar.NextMonth(_month), 1, _calendar) : new YearDate(_month, _day + 1, _calendar);
+        IsEndOfMonth() 
+            ? new YearDate(_calendar, _calendar.NextMonth(_month), 1)
+            : new YearDate(_calendar, _month, _day + 1);
 
     private bool IsEndOfMonth() => _calendar.DaysInMonth(_month) == _day;
   
